@@ -9,7 +9,7 @@
 
 This lab describes the process of generating a AMD Versal&trade; adaptive SoC XDMA design with AXI4 Memory Mapped interface connecting to DDR memory. This lab explains a step by step procedure to configure a Control, Interfaces and Processing System (CIPS) XDMA design and network on chip (NoC) IP. The following figure shows the AXI4 Memory Mapped (AXI-MM) interface to DDR using the NoC IP. At the end of this lab, you can synthesize and implement the design, and generate a Programmable Device Image (PDI) file. The PDI file is used to program the AMD Versal adaptive SoC and run data traffic on a system. For host to chip (H2C) transfers, data is read from Host, and sent to DDR memory. For chip to host (C2H) transfers, data is read from DDR memory and written to Host. Transfer can be initiated on all 4 channels.
 
-This lab targets a xcvc1902-vsvd1760-1LP-e-S-es1 part on a VCK5000 board. This lab connects to DDR found outside the AMD Versal adaptive SoC.
+This lab targets a VCK190 Evaluation board. This lab connects to DDR found outside the AMD Versal adaptive SoC.
 
 **AXI-MM Default Example Design**
 
