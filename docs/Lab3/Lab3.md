@@ -16,7 +16,7 @@ This lab describes the process of generating a AMD Versal&trade; adaptive SoC QD
 
 This lab provides step by step instructions to configure a Control Interfaces and Processing System (CIPS) QDMA design and network on chip (NoC) IP. The following figure shows the AXI4 Memory Mapped (AXI-MM) interface to DDR using the NoC IP. At the end of this lab, you can synthesize and implement the design, and generate a Programmable Device Image (PDI) file. The PDI file is used to program the AMD Versal adaptive SoC and run data traffic on a system. For the AXI-MM interface host to chip (H2C) transfers, data is read from Host and sent to DDR memory. For chip to host (C2H) transfers, data is read from DDR memory and written to host.
 
-This lab targets xcvp1202-vsva2785-2MP-e-S-es1 part. This lab connects to DDR memory found outside the AMD Versal adaptive SoC. A constraints file is provided and added to the design during the lab. The constraints file lists all DDR pins and their placement. You can modify the constraint file based on your requirements and DDR part selection.
+This lab targets xcvp1202-vsva2785-2MP-e-S part. This lab connects to DDR memory found outside the AMD Versal adaptive SoC. A constraints file is provided and added to the design during the lab. The constraints file lists all DDR pins and their placement. You can modify the constraint file based on your requirements and DDR part selection.
 
 **AXI4 Memory Mapped to DDR Design**
 
@@ -38,7 +38,7 @@ The provided top_impl.xdc constraints file contains the needed DDR pins and thei
 1.  Open the AMD Vivado&trade; Design Suite.
 2.  Click **Create Project** from the Quick Start Menu.
 3.  Step through the popup menus to access the Default Part page.
-4.  In the Default Part page, search for and select **xcvp1202-vsva2785-2MP-e-S-es1** .
+4.  In the Default Part page, search for and select **xcvp1202-vsva2785-2MP-e-S** .
 5.  Continue to the Finish stage to create the new project and open AMD Vivado.
 6.  In the AMD Vivado Flow Navigator, click **IP Integrator → Create Block
     Design**. A popup dialog displays to create the block design.
@@ -60,31 +60,29 @@ The provided top_impl.xdc constraints file contains the needed DDR pins and thei
     CIPS IP**.
 5.  CIPS configuration page opens. Make sure Design flow has **Full
     System** selected and click **Next**.
-    ![](./media/image6.png)
+    ![](./media/cips_config1.png)
 6.  CIPS PS and CPM configuration page opens. Select **CPM**.
-    ![](./media/image7.png)
+    ![](./media/cips_config2.png)
 7.  CPM5 Configuration dialog box will open. Select the **CPM5 Basic
     Configuration** option.
-8.  Set the PCIe Controller 0 Modes to **DMA**, and set the lane width
-    to **X16**. Available lane widths are X1, X2, X4, X8 and X16.
-    ![](./media/image32.png)
+8.  Set the PCIe Controller 0 Modes to **DMA**, and set Link Speed and the lane width
+    to **8.0GT/s** and **X16**. Available Link Speeds are 8GT/s and 16GT/s and lane widths are X1, X2, X4, X8 and X16.
+	![](./media/Instantiate_the_CIPS_IP.png)
 
 ## CPM Configuration
 
-1.  In the Configuration Options pane, select **CPM5 PCIE Controller 0
-    Configuration** to customize DMA.
-2.  In the Basic tab, set the following options:
-    * CPM Modes: **Advanced**.
-    * PCIE0 Functional Mode: **QDMA**.
-    * Maximum Link Speed: **8.0 GT/s** (Gen3).
+1.  In the Configuration Options pane, select **CPM5 PCIE Controller 0** to customize DMA.
+2.  For Configuration Mode select **Advanced**.
+3.  In the Basic tab, set the following options:
+    * Functional Mode: **QDMA**.
     * DMA Interface option: **AXI Memory Mapped**.
-    ![](./media/image33.png)
+	![](./media/CPM5_basic_tab.png)
 3.  In the Capabilities tab, set the following option:
     *  Total Physical Functions: **4**
     *   MSI-X Options: **MSI-X Internal**
  
     This option enables the CPM5 QDMA in MSI-X internal mode.
-    ![](./media/image34.png)
+	![](./media/CPM5_capabilities_tab.png)
 4.  In the PF ID tab, there are 4 PFs listed with device ID. Based on
     your need, you can modify the device ID. For this lab we will keep
     the default device ID.
@@ -95,7 +93,7 @@ The provided top_impl.xdc constraints file contains the needed DDR pins and thei
     * Set type to **DMA**.
     * Select the **64 bit** checkbox.
     * Select the **Prefetchable** checkbox.
-    * Set size to **128 Kilobytes**. 
+    * Set size to **512 Kilobytes**. 
     
     Second row (for BAR2):
 
@@ -108,7 +106,7 @@ The provided top_impl.xdc constraints file contains the needed DDR pins and thei
     The same Bar options can be copied for all 4 PFs. Depending on your needs, you can modify the BAR selection for all PFs. For this lab, we will copy PF10 selection to all 3 PFs. To do so, click **Copy PF0**.
 
     ***Note*:** By default, DMA is not selected for any BAR. Select the DMA option in Type section to select DMA BAR.
-    ![](./media/image12.png)
+	![](./media/CPM5_BARs_tab.png)
 6.  In the PCIe: DMA tab keep all default selections.
 7.  Click **OK** to configure CPM.
 8.  Select **PS PMC** to configure PCIE reset and DMA reference clock
@@ -152,14 +150,12 @@ Next you will add and configure a Network on Chip (NoC) IP core for the DDR conn
     
     First row (for S00_AXI):
     * Connected To: **PS PCIe**.
-    * Clock: **aclk0** (input clock).
     * All other options use default settings. 
     
     Second row (for S01_AXI):
     * Connected To: **PS PCIe**.
-    * Clock: **aclk1** (input clock).
     * All other options use default settings.
-    ![](./media/image14.jpeg)
+	![](./media/NOC_input_tab.jpeg)
 6.  In the Connectivity tab, set the NoC connectivity as follows:
     * For S00_AXI, select the **MC Port 0** checkbox.
     * For S01_AXI, select the **MC Port 0** checkbox.
@@ -168,7 +164,7 @@ Next you will add and configure a Network on Chip (NoC) IP core for the DDR conn
     * Input System clock period (ps): **5000 (200.000 MHz)**.
     * Select the **Enable Internal Responder** checkbox.
     * All others options use the default settings.
-    ![](./media/image15.png)
+	![](./media/NOC_DDR_basic_tab.png)
 
     ***Note*:** This is a sample configuration. Your DDR configuration and frequencies should be based on your design requirements.
 8.  In the DDR Memory tab, set the following options:
@@ -200,12 +196,12 @@ Next you will add and configure a Network on Chip (NoC) IP core for the DDR conn
 
 Next, set the necessary address settings for the NoC IP.
 
-1.  Open the **Address Editor** tab as shown in the following figure. Expand the tree by clicking the down-arrow on **versal_cips_0**. Expand **DATA_PCIE0**, and expand **DATA_PCIE1**.
+1.  Open the **Address Editor** tab as shown in the following figure. Expand the tree by clicking the down-arrow on **versal_cips_0**. Expand **CPM_PCIE_NOC_0**, and expand **CPM_PCIE_NOC_1**.
 2.  For S00_AXI, right-click in the Master Base Address cell, and select **Assign** from the context menu.
 3.  And similarly for S01_AXI, right-click in the Master Base Address cell, and select **Assign** from the context menu.
 
     ***Note*:** The address 0x00000 is assigned to the DDR.
-    ![](./media/image19.png)
+	![](./media/Address_editor_tab.png)
 
 ## Validate the Block Design
 
