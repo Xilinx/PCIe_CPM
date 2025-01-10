@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1700</width>
+    <height>846</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QFrame" name="title_frame">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>61</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+    border: 6px ridge #707070; /* Thick ridge border */
+    background-color: #F5F5DC; /* Darker beige background */
+}
+
+QLabel {
+    border: 0px;
+}
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QPushButton" name="menu_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>130</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Verdana</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#menu_button {
+    border: none;           /* No border */
+    padding: 0;             /* No padding */
+    background-color: transparent; /* Transparent background */
+}
+
+#menu_button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+}
+
+#menu_button:pressed {
+    background-color: rgba(0, 0, 0, 0.2); /* Change background color when pressed */
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string>Search Menu</string>
+           </property>
+           <property name="icon">
+            <iconset resource="GUI_Logos/images.qrc">
+             <normaloff>:/logos/menu_icon.png</normaloff>:/logos/menu_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>70</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_6">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    padding: 0; /* No padding */
+    font-family: Verdana;
+    font: bold 18px; /* Set font weight to bold */
+}</string>
+           </property>
+           <property name="text">
+            <string>REGISTER PARSER V1.0</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icons_from_internet/register_icon.png</normaloff>icons_from_internet/register_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>50</width>
+             <height>35</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>300</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="open_file_parser_button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="GUI_Logos/images.qrc">
+             <normaloff>:/logos/write_icon.png</normaloff>:/logos/write_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <widget class="QFrame" name="search_registers_available_frame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>278</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QGroupBox" name="groupBox">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox {
+    border: 4px solid gray;
+    border-color: #FF17365D;
+    margin-top: 15px;
+    font-size: 14px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+	border-radius: 10px; /* Rounded corners */
+	background-color: #F5F5DC; /* Darker beige background */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 5px 150px;
+    background-color: #FF17365D;
+    color: rgb(255, 255, 255);
+}
+
+</string>
+               </property>
+               <property name="title">
+                <string>Search Registers Available</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QFrame" name="frame_4">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                     <item>
+                      <widget class="QLineEdit" name="search_register_line_edit">
+                       <property name="styleSheet">
+                        <string notr="true">QLineEdit {
+    background-color: white; /* Beige background */
+    border: 4px ridge #707070; /* Thick ridge border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 0 8px; /* Padding */
+    font-size: 16px; /* Font size */
+}
+
+QLineEdit:focus {
+    background-color: rgb(192, 192, 255); /* Light blue background on focus */
+}
+
+QLineEdit::selection {
+    background-color: darkgray; /* Selection background color */
+}
+</string>
+                       </property>
+                       <property name="placeholderText">
+                        <string>Enter register name...</string>
+                       </property>
+                       <property name="clearButtonEnabled">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_5">
+                       <item>
+                        <widget class="QPushButton" name="search_registers_button">
+                         <property name="font">
+                          <font>
+                           <family>Verdana</family>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Search</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="GUI_Logos/images.qrc">
+                           <normaloff>:/logos/search_icon.png</normaloff>:/logos/search_icon.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>20</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="clearButton">
+                         <property name="font">
+                          <font>
+                           <family>Verdana</family>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <property name="text">
+                          <string>Clear</string>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="GUI_Logos/images.qrc">
+                           <normaloff>:/logos/clear.png</normaloff>:/logos/clear.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>20</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="registers_found_label">
+                  <property name="font">
+                   <font>
+                    <family>Verdana</family>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Total Registers found: </string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QScrollArea" name="search_registers_scroll_area">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    background-color: beige; /* Beige background */
+    border: 4px ridge #707070; /* Thick ridge border */
+    border-radius: 5px; /* Rounded corners */
+    color: #333333; /* Dark text color */
+    font: bold 12px; /* Bold 12px font */
+    font-family: Verdana;
+    text-align: left; /* Center text */
+}
+
+QPushButton:hover {
+    background-color: #ddccaa; /* Lighter beige background on hover */
+}
+
+QPushButton:pressed {
+    background-color: #0000000; /* Darker grey background when pressed */
+    border-style: inset; /* Inset border when pressed */
+}
+</string>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+                  </property>
+                  <property name="widgetResizable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                  <widget class="QWidget" name="scrollAreaWidgetContents">
+                   <property name="geometry">
+                    <rect>
+                     <x>0</x>
+                     <y>0</y>
+                     <width>248</width>
+                     <height>557</height>
+                    </rect>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_2">
+                    <item>
+                     <layout class="QVBoxLayout" name="search_registers_vertical_layout">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="sizeConstraint">
+                       <enum>QLayout::SetNoConstraint</enum>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="register_data_frame">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <property name="spacing">
+              <number>3</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QGroupBox" name="table_functionalities_groupbox">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QGroupBox {
+    border: 4px solid gray;
+    border-color: #FF17365D;
+    margin-top: 25px;
+    font-size: 14px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+	border-radius: 10px; /* Rounded corners */
+	background-color: #F5F5DC; /* Darker beige background */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 5px 150px;
+    background-color: #FF17365D;
+    color: rgb(255, 255, 255);
+}
+
+</string>
+               </property>
+               <property name="title">
+                <string>Table Functionalities</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout">
+                    <item>
+                     <widget class="QPushButton" name="output_to_csv_button">
+                      <property name="font">
+                       <font>
+                        <family>Verdana</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">text-font:Verdana;</string>
+                      </property>
+                      <property name="text">
+                       <string>Open in CSV </string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="GUI_Logos/images.qrc">
+                        <normaloff>:/logos/csv_icon.png</normaloff>:/logos/csv_icon.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="output_to_html_button">
+                      <property name="font">
+                       <font>
+                        <family>Verdana</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Open in HTML </string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="GUI_Logos/images.qrc">
+                        <normaloff>:/logos/html_icon.png</normaloff>:/logos/html_icon.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="loaded_file_label">
+                      <property name="font">
+                       <font>
+                        <family>Verdana</family>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>File: </string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="loaded_register_label">
+                      <property name="font">
+                       <font>
+                        <family>Verdana</family>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Register: </string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableView" name="register_tableview">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="acceptDrops">
+                <bool>false</bool>
+               </property>
+               <property name="autoFillBackground">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTableView {
+    border: 5px solid #707070;
+    border-style: ridge;
+    gridline-color: #E0E0E0;
+    background-color: #F5F5F5;
+    border-radius: 6px; /* Rounded border */
+}
+
+QTableView::item {
+    padding: 5px;
+    border-bottom: 2px solid #E0E0E0; /* Increased thickness of bottom border */
+    border-right: 2px solid #E0E0E0; /* Increased thickness of right border */
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+QTableView::item:selected {
+    background-color: #ADD8E6;
+    color: #000000;
+}
+
+QHeaderView::section {
+    background-color: beige; /* Beige background color */
+    color: black; /* Text color */
+    padding: 4px;
+    border: 2px solid #6c6c6c;
+    font-family: Verdana; /* Verdana font */
+    font-weight: bold; /* Bold text */
+}
+
+QHeaderView::section:checked {
+    color: black;
+    background-color: white;
+}
+
+QHeaderView::down-arrow {
+    icon-color: white;
+}
+
+QHeaderView::up-arrow {
+    icon-color: white;
+}
+</string>
+               </property>
+               <property name="dragEnabled">
+                <bool>false</bool>
+               </property>
+               <property name="dragDropMode">
+                <enum>QAbstractItemView::NoDragDrop</enum>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>false</bool>
+               </property>
+               <property name="verticalScrollMode">
+                <enum>QAbstractItemView::ScrollPerPixel</enum>
+               </property>
+               <property name="horizontalScrollMode">
+                <enum>QAbstractItemView::ScrollPerPixel</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1700</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="GUI_Logos/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

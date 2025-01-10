@@ -1,0 +1,35 @@
+<RCC>
+  <qresource prefix="logos">
+    <file>trigger_icon_2.png</file>
+    <file>loading_movie.gif</file>
+    <file>red_icon_for_ltssm.png</file>
+    <file>minus_icon.png</file>
+    <file>add_icon.png</file>
+    <file>trigger_icon.png</file>
+    <file>user_manual.png</file>
+    <file>icon-register.png</file>
+    <file>treeViewLogo.png</file>
+    <file>down_arrow_icon.png</file>
+    <file>green_status.png</file>
+    <file>PCI_EXPRESS2.png</file>
+    <file>browser_icon.png</file>
+    <file>extract_files_icon.png</file>
+    <file>parse_files_icon.png</file>
+    <file>clean_registers_icon.png</file>
+    <file>read_register_icon.png</file>
+    <file>stop_read_icon.png</file>
+    <file>write_icon.png</file>
+    <file>chipscopy_logo.png</file>
+    <file>clear.png</file>
+    <file>AMD_Logo.png</file>
+    <file>connect_logo.png</file>
+    <file>device_logo.png</file>
+    <file>eye_scan.png</file>
+    <file>logic_analyzer.png</file>
+    <file>main_menu.png</file>
+    <file>programming.png</file>
+    <file>register_icon.png</file>
+    <file>reset.png</file>
+    <file>state_machine.png</file>
+  </qresource>
+</RCC>
