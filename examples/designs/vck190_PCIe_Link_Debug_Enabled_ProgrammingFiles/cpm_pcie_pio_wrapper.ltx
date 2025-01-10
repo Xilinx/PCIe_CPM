@@ -1,0 +1,32 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "AXI_DEBUG_HUB_V1",
+                        "name": "cpm_pcie_pio_i/axi_dbg_hub_0",
+                        "spec": "axi_dbg_hub_v2_0",
+                        "ipName": "axi_dbg_hub",
+                        "address_info": {
+                            "offset": "0x00080000000",
+                            "range": "0x00200000"
+                        },
+                        "uuid": "9C1BAFE4AF215D328286970AB64F51AA"
+                    },
+                    {
+                        "name": "cpm_pcie_pio_i/versal_cips_0/inst/cpm_0/inst/pcie0_dbg_intf",
+                        "spec": "dbg_intf_v1_0",
+                        "ipName": "dbg_intf",
+                        "master": "cpm_pcie_pio_i/axi_dbg_hub_0",
+                        "uuid": "12314111039D533AA66F839B59E85FF8"
+                    }
+                ]
+            }
+        ]
+    }
+}
