@@ -385,7 +385,7 @@ QLabel {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Versal ACAP Debugger using ChipScope Python API v1.0</string>
+             <string>Versal Adaptive SoC CPM Debugger Using ChipScoPy</string>
             </property>
             <property name="icon">
              <iconset resource="../GUI_Logos/images.qrc">
