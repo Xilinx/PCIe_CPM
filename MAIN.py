@@ -201,7 +201,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("ui_designs/versal_design.ui",self)
-        self.setWindowTitle("Versal ACAP Debug Analyzer v1.0")
+        self.setWindowTitle("Versal Adaptive SoC CPM Debugger")
         self.setFixedSize(self.size())
         self.stackedWidget.setCurrentIndex(0)
         self.apply_images_to_gui()
