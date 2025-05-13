@@ -24,10 +24,10 @@ This lab targets xcvp1202-vsva2785-2MP-e-S part. This lab connects to DDR memory
 
 ## Tutorial Design File
 
-Before running the lab, download the top_impl.xdc constraints file available in the [reference design file](https://www.xilinx.com/cgi-bin/docs/ctdoc?cid=%20d744977f-750a-4b9e-ae87-d357a2c4e039%3Bd%3D%20pg347-versal-cpm-dma-v3-0-labs.zip). To do so:
+Before running the lab, download the top_impl.xdc constraints file available in the [reference design file](https://www.xilinx.com/support/documents/ip_documentation/versal_cips/v3_0/pg347-versal-cpm-dma-v3-0-register-map.zip). To do so:
 
 1.  Download the [reference design
-    file](https://www.xilinx.com/cgi-bin/docs/ctdoc?cid=%20d744977f-750a-4b9e-ae87-d357a2c4e039%3Bd%3D%20pg347-versal-cpm-dma-v3-0-labs.zip) from the Xilinx website.
+    file](https://www.xilinx.com/support/documents/ip_documentation/versal_cips/v3_0/pg347-versal-cpm-dma-v3-0-register-map.zip) from the Xilinx website.
 2.  Extract the ZIP file contents into any write-accessible location.
 3.  Locate the top_impl.xdc constraints file.
 
@@ -224,7 +224,7 @@ After validation, create a design wrapper. A design wrapper file enables you to 
 
 After the wrapper file is created, you will add the constraints file top_impl.xdc, which is provided with this guide, to your design in AMD Vivado. The constraints file constrains DDR pin placement. Then, you can run synthesis and implementation, which generates a PDI (Programmable Device Image) file.
 
-***Note*:** To locate the top_impl.xdc constraints file, first download the [reference design file](https://www.xilinx.com/cgi-bin/docs/ctdoc?cid=%20d744977f-750a-4b9e-ae87-d357a2c4e039%3Bd%3D%20pg347-versal-cpm-dma-v3-0-labs.zip) file and extract its contents.
+***Note*:** To locate the top_impl.xdc constraints file, first download the [reference design file](https://www.xilinx.com/support/documents/ip_documentation/versal_cips/v3_0/pg347-versal-cpm-dma-v3-0-register-map.zip) file and extract its contents.
 
 1.  In the Flow Navigator window, click **Add Sources**, click **Add or
     create Constraints**, and add the top_impl.xdc file.
